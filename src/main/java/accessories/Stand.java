@@ -25,4 +25,9 @@ public class Stand implements ISell {
         double sell = bought * 2;
         return sell;
     }
+
+    public double getProfit(){
+        double profit = sellingPrice() - getBought();
+        return profit;
+    }
 }

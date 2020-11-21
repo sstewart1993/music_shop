@@ -15,23 +15,23 @@ public class AccessoriesTest {
 
     @Before
     public void before(){
-        stand = new Stand("piano");
-        reed = new Reed("trumpet");
-        guitarString = new GuitarString("guitar");
+        guitarString = new GuitarString("guitar", 5);
+        stand = new Stand("piano", 5);
+        reed = new Reed("trumpet", 0.25);
     }
 
     @Test
     public void sellingString(){
-        assertEquals(20, guitarString.calculateMarkup(10), 0);
+        assertEquals(10, guitarString.sellingPrice(), 0);
     }
 
     @Test
     public void sellingStand(){
-        assertEquals(10, guitarString.calculateMarkup(5), 0);
+        assertEquals(10, stand.sellingPrice(), 0);
     }
 
     @Test
     public void sellingReed(){
-        assertEquals(0.5, guitarString.calculateMarkup(0.25), 0.00);
+        assertEquals(0.5, reed.sellingPrice(), 0.00);
     }
 }

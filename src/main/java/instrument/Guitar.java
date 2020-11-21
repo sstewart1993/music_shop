@@ -5,8 +5,8 @@ public class Guitar extends Instruments{
     private int noOfStrings;
     private String type;
 
-    public Guitar(String material, String color, int noOfStrings, String type) {
-        super(material, color);
+    public Guitar(String material, String color, double bought, int noOfStrings, String type) {
+        super(material, color, bought);
         this.noOfStrings = noOfStrings;
         this.type = type;
     }
@@ -23,8 +23,11 @@ public class Guitar extends Instruments{
         return "Guitar goes strum";
     }
 
-    public Double calculateMarkup(double bought){
+    public Double sellingPrice(){
+        double bought = getBought();
         double sell = bought * 2;
         return sell;
     }
+
+
 }

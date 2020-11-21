@@ -7,10 +7,12 @@ public class Instruments implements IPlay, ISell {
 
     private String material;
     private String color;
+    private double bought;
 
-    public Instruments(String material, String color) {
+    public Instruments(String material, String color, double bought ) {
         this.material = material;
         this.color = color;
+        this.bought = bought;
     }
 
     public String getMaterial() {
@@ -21,11 +23,20 @@ public class Instruments implements IPlay, ISell {
         return color;
     }
 
+    public double getBought() {
+        return bought;
+    }
+
     public String sound() {
         return null;
     }
 
-    public Double calculateMarkup(double bought) {
+    public Double sellingPrice() {
         return null;
+    }
+
+    public double getProfit(){
+        double profit = sellingPrice() - getBought();
+        return profit;
     }
 }

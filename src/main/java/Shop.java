@@ -23,7 +23,6 @@ public class Shop {
         return stock.size();
     }
 
-
     public void removeFromStock(String newStock) {
         stock.remove(newStock);
     }

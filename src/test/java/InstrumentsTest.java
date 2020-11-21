@@ -9,17 +9,15 @@ import static org.junit.Assert.assertEquals;
 
 public class InstrumentsTest {
 
-    Instruments instrument;
     Guitar guitar;
     Piano piano;
     Trumpet trumpet;
 
     @Before
     public void before(){
-        instrument = new Instruments("plastic", "purple");
-        guitar = new Guitar("Steel", "Red", 4, "bass");
-        piano = new Piano("Wood", "Black", 32, "grand");
-        trumpet = new Trumpet("Metal", "Gold" ,6);
+        guitar = new Guitar("Steel", "Red", 50, 4, "bass");
+        piano = new Piano("Wood", "Black", 200, 32, "grand");
+        trumpet = new Trumpet("Metal", "Gold" , 5, 6);
     }
 
     @Test
@@ -39,16 +37,31 @@ public class InstrumentsTest {
 
     @Test
     public void sellingGuitar(){
-        assertEquals(90.0, guitar.calculateMarkup(45.0), 0.0);
+        assertEquals(100.0, guitar.sellingPrice(), 0.0);
     }
 
     @Test
     public void sellingPiano(){
-        assertEquals(55, piano.calculateMarkup(50), 0);
+        assertEquals(220, piano.sellingPrice(), 0.0);
     }
 
     @Test
     public void sellingTrumpet(){
-        assertEquals(200, trumpet.calculateMarkup(20), 0.0);
+        assertEquals(50, trumpet.sellingPrice(), 0.0);
+    }
+
+    @Test
+    public void checkGetProfitGuitar(){
+        assertEquals(50, guitar.getProfit(), 0);
+    }
+
+    @Test
+    public void checkGetProfitPiano(){
+        assertEquals(20, piano.getProfit(), 0);
+    }
+
+    @Test
+    public void checkGetProfitTrumpet(){
+        assertEquals(45, trumpet.getProfit(), 0);
     }
 }

@@ -5,8 +5,8 @@ public class Piano extends Instruments{
     private int noOfKeys;
     private String type;
 
-    public Piano(String material, String color, int noOfKeys, String type) {
-        super(material, color);
+    public Piano(String material, String color, double bought, int noOfKeys, String type) {
+        super(material, color, bought);
         this.noOfKeys = noOfKeys;
         this.type = type;
     }
@@ -23,8 +23,11 @@ public class Piano extends Instruments{
         return "Piano goes ding";
     }
 
-    public Double calculateMarkup(double bought){
-        bought += (bought /10);
-        return bought;
+    public Double sellingPrice(){
+        double bought = getBought();
+        double selling = bought + (bought /10);
+        return selling;
     }
+
+
 }

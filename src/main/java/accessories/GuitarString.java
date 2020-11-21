@@ -5,12 +5,23 @@ import behaviours.ISell;
 public class GuitarString implements ISell {
 
     private String goesWith;
+    private double bought;
 
-    public GuitarString(String goesWith) {
+    public GuitarString(String goesWith, double bought) {
         this.goesWith = goesWith;
+        this.bought = bought;
     }
 
-    public Double calculateMarkup(double bought){
+    public String getGoesWith() {
+        return goesWith;
+    }
+
+    public double getBought() {
+        return bought;
+    }
+
+    public Double sellingPrice(){
+        double bought = getBought();
         double sell = bought * 2;
         return sell;
     }

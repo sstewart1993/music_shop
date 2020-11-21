@@ -4,8 +4,8 @@ public class Trumpet extends Instruments{
 
     private int noOfValves;
 
-    public Trumpet(String material, String color, int noOfValves) {
-        super(material, color);
+    public Trumpet(String material, String color, double bought, int noOfValves) {
+        super(material, color, bought);
         this.noOfValves = noOfValves;
     }
 
@@ -17,7 +17,8 @@ public class Trumpet extends Instruments{
         return "Trumpet goes trump";
     }
 
-    public Double calculateMarkup(double bought){
+    public Double sellingPrice(){
+        double bought = getBought();
         double sell = bought * 10;
         return sell;
     }
